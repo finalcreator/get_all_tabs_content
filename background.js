@@ -86,7 +86,7 @@ Action = {
 			
 			
 			for (var i=0; i < tabs.length; i++) {
-				chrome.tabs.sendMessage(tabs[i].id, {text: 'report_back',index:i,ds:localStorage['ds']}, function(response) {
+				chrome.tabs.sendMessage(tabs[i].id, {text: 'report_back',index:i,ds:localStorage['ds'],is_href:localStorage['is_href']}, function(response) {
 					//console.log(domContent);
 					if(response){
 						if(response.magnet){

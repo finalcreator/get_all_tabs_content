@@ -1,6 +1,6 @@
 {
    "background": {
-      "scripts": [ "vendor/jquery-1.7.2_min.js", "vendor/encoder.js", "background.js" ]
+      "scripts": [ "vendor/jquery-1.7.2_min.js", "vendor/encoder.js", "background.js","content.js","options.js" ]
    },
    "content_scripts": [{
     "matches": ["*://*/*"],

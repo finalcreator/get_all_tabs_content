@@ -82,6 +82,12 @@ jQuery(document).ready(function($){
 	});
 	
 	//DOM Selector
+	$('#is_href').change(function(e){
+		
+		localStorage["is_href"] = $(this).prop("checked");
+		OptionFormManager.init();
+	});
+
 	$('#ds').change(function(e){
 		
 		localStorage["ds"] = $(this).val();
@@ -179,6 +185,7 @@ var OptionFormManager = {
 		var default_action = localStorage['default_action'] ? localStorage['default_action'] : "menu";
 		var mime = localStorage['mime'] ? localStorage['mime'] : 'plaintext';
 		var ds = localStorage['ds'] ? localStorage['ds'] : 'magnet';
+		var is_href = localStorage['is_href'] == "true" ? true : false;
 		
 		// Coche Format
 		this.cocherFormat(format);
@@ -215,6 +222,7 @@ var OptionFormManager = {
 		// MIME type
 		jQuery('#mime').val(mime);
 		jQuery('#ds').val(ds);
+		jQuery('#is_href').prop('checked', is_href);
 		
 	},
 	
@@ -239,6 +247,7 @@ var OptionFormManager = {
 		delete(localStorage["default_action"]);
 		delete(localStorage["mime"]);
 		delete(localStorage["ds"]);
+		delete(localStorage["is_href"]);
 		this.init();
 	}
 };
